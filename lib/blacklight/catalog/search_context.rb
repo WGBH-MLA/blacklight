@@ -25,7 +25,9 @@ module Blacklight::Catalog::SearchContext
   
   # The current search session 
   def current_search_session
-
+    # WGBH CUSTOM -> dont save em!
+    return nil
+    
     @current_search_session ||= if start_new_search_session?
       find_or_initialize_search_session_from_params params
     elsif params[:search_context].present?
